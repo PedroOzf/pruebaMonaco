@@ -1,0 +1,8 @@
+
+.editor-container {
+  height: calc(100vh - 100px);
+}
+
+router-outlet{
+  height: 100vh;
+}

@@ -1,0 +1,39 @@
+<div class="ProblemasMain">
+  <div class="Datos-Problema">
+  </div>
+  <div class="Monaco-ide">
+    <ngx-monaco-editor class="my-code-editor"  [options]="editorOptions" [(ngModel)]="code" (onInit)="onInit($event)"></ngx-monaco-editor>
+  </div>
+  <button id="run-text" (click)="onInit(editor)">pulsar</button>
+</div>
+<style>
+  .ProblemasMain{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+    background: grey;
+    padding-top: 0.5vh;
+  }
+  #run-text{
+    height: 50px;
+    width: 200px;
+  }
+  .Datos-Problema{
+    margin-left: 0vw;
+    width: 30vw;
+    background: #212529;
+    height: inherit;
+    display: inline;
+    padding-right: 0.5vw;
+  }
+  .Monaco-ide{
+    margin-right: 0vw;
+    width: 70vw;
+    height: inherit;
+    display: inline;
+    margin-left: 0.3vw;
+
+  }
+</style>
+
