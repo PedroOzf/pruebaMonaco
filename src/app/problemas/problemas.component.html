@@ -1,5 +1,22 @@
 <div class="ProblemasMain">
   <div class="Datos-Problema">
+    <div class="Titulo-Problema">{{problema.id}}. {{problema.nombre}}</div>
+    <div class="Enunciado-Problema" *ngFor="let enunciado of problema.enunciado">{{enunciado}}<br></div>
+    <br>
+    <div class="texto-enunciado">
+      <b class="subtitulo">Sample Input:<br></b>
+      <div class="sample-box">
+        <div *ngFor="let input of problema.ejemploInput">{{input}}<br></div>
+      </div>
+    </div>
+    <br>
+    <div class="texto-enunciado">
+      <b class="subtitulo">Sample Input:<br></b>
+      <div class="sample-box">
+        <div *ngFor="let output of problema.ejemploOutput">{{output}}<br></div>
+      </div>
+    </div>
+    <br>
   </div>
   <div class="Panel-derecho">
     <div class="Monaco-ide box-borders">
@@ -13,12 +30,41 @@
 
 </div>
 <style>
+  .subtitulo{
+    font-size: 1em;
+    margin-bottom: 2%;
+  }
+  .sample-box{
+    background-color: #04445e;
+    margin-top: 2%;
+    padding:  2%;
+    padding-left: 7% !important;
+  }
+  .Enunciado-Problema{
+    word-wrap: break-word;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 0.8vw;
+  }
+  .texto-enunciado{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .ProblemasMain > div{
+    color: whitesmoke;
+  }
+  .Titulo-Problema{
+    font-size: 2em;
+    text-align: left;
+    margin-left: 5%;
+  }
   .Panel-derecho-inferior{
     align-content: center;
     background: #02203c;
     margin-top: 0% !important;
     margin-left: 0.3vw;
     margin-right: 10px;
+    height: 80%;
   }
   .box-borders{
     margin-right: 10px;
@@ -27,15 +73,14 @@
   .Panel-derecho{
     margin-left: 0.3vw;
     display: grid;
-    grid-template-rows: 90% 6%;
-    background: rgba(0, 39, 82, 0.96);
+    grid-template-rows: 90% 10%;
   }
   .ProblemasMain{
     display: flex;
     justify-content: center;
     width: 100%;
     height: inherit;
-    background: rgba(0, 39, 82, 0.96);
+    background: rgba(7, 58, 116, 0.96);
     padding-top: 0.5vh;
   }
   #run-text{
@@ -44,12 +89,13 @@
     background-color: #062c33;
   }
   .Datos-Problema{
-    margin-left: 0vw;
+    margin-left: 0.3vw;
     width: 30vw;
     background: #02203c;
-    height: inherit;
     display: inline;
     padding-right: 0.5vw;
+    margin-bottom: 1%;
+    overflow: auto;
 
   }
   .Monaco-ide{

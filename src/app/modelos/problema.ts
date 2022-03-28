@@ -2,7 +2,10 @@ export class Problema{
 
 
   constructor(
-  public nombre: string,
-  public enunciado: string,
+    public id:number,
+    public nombre: string,
+    public enunciado: string[],
+    public ejemploInput:string[],
+    public ejemploOutput: string[]
   ){}
 }
