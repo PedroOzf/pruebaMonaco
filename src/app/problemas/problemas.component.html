@@ -1,34 +1,58 @@
 <div class="ProblemasMain">
   <div class="Datos-Problema">
   </div>
-  <div class="Monaco-ide">
-    <ngx-monaco-editor class="my-code-editor"  [options]="editorOptions" [(ngModel)]="code" (onInit)="onInit($event)"></ngx-monaco-editor>
+  <div class="Panel-derecho">
+    <div class="Monaco-ide box-borders">
+      <ngx-monaco-editor class="my-code-editor"  [options]="editorOptions" [(ngModel)]="code" (onInit)="onInit($event)"></ngx-monaco-editor>
+    </div>
+    <div class="Panel-derecho-inferior box-borders">
+      <button id="run-text" (click)="onInit(editor)">pulsar</button>
+    </div>
+
   </div>
-  <button id="run-text" (click)="onInit(editor)">pulsar</button>
+
 </div>
 <style>
+  .Panel-derecho-inferior{
+    align-content: center;
+    background: #02203c;
+    margin-top: 0% !important;
+    margin-left: 0.3vw;
+    margin-right: 10px;
+  }
+  .box-borders{
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .Panel-derecho{
+    margin-left: 0.3vw;
+    display: grid;
+    grid-template-rows: 90% 6%;
+    background: rgba(0, 39, 82, 0.96);
+  }
   .ProblemasMain{
     display: flex;
     justify-content: center;
     width: 100%;
     height: inherit;
-    background: grey;
+    background: rgba(0, 39, 82, 0.96);
     padding-top: 0.5vh;
   }
   #run-text{
-    height: 50px;
-    width: 200px;
+    color: whitesmoke;
+    width: 5vw;
+    background-color: #062c33;
   }
   .Datos-Problema{
     margin-left: 0vw;
     width: 30vw;
-    background: #212529;
+    background: #02203c;
     height: inherit;
     display: inline;
     padding-right: 0.5vw;
+
   }
   .Monaco-ide{
-    margin-right: 0vw;
     width: 70vw;
     height: inherit;
     display: inline;
