@@ -1,0 +1,9 @@
+.container {
+  min-height: 100vh;
+  background: white;}
+.my-code-editor{
+  height: 100%;
+}
+.monaco-editor{
+  height: inherit;
+}
