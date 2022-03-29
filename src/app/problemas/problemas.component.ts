@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {colors} from "@angular/cli/utilities/color";
 import {Problema} from "../modelos/problema";
 import {ActivatedRoute} from "@angular/router";
+import {Ejemplo} from "../modelos/ejemplo";
 
 @Component({
   selector: 'app-problemas',
@@ -35,7 +36,7 @@ export class ProblemasComponent implements OnInit{
       "  instance, the numbers ","\n" +
       "  A subsequence of an array is a set of numbers that aren't necessarily adjacent\n" +
       "  in the array but that are in the same order as they appear in the array. For\n" +
-      "  instance, the numbers "],["array = [1,2,3,5]","sequence = [1,-1,2.3"],["true"]);
+      "  instance, the numbers "],[new Ejemplo("nums = [2,7,11,15], target = 9","[0,1]","Because nums[0] + nums[1] == 9, we return [0, 1]."),new Ejemplo("nums = [3,2,4], target = 6","[1,2]","")]);
   }
   onInit(editor) {
     this.editor = editor;
@@ -72,7 +73,7 @@ export class ProblemasComponent implements OnInit{
         "  instance, the numbers ","\n" +
         "  A subsequence of an array is a set of numbers that aren't necessarily adjacent\n" +
         "  in the array but that are in the same order as they appear in the array. For\n" +
-        "  instance, the numbers "],["array = [1,2,3,5]","sequence = [1,-1,2.3"],["true"]),
+        "  instance, the numbers "],[new Ejemplo("nums = [2,7,11,15], target = 9","[0,1]","Because nums[0] + nums[1] == 9, we return [0, 1]."),new Ejemplo("nums = [3,2,4], target = 6","[1,2]","")]),
       new Problema(2,"dasdasdasda",[
         "  Given two non-empty arrays of integers, write a function that determines" +
         "  whether the second array is a subsequence of the first one","A subsequence of an array is a set of numbers that aren't necessarily adjacent\n" +
@@ -92,7 +93,7 @@ export class ProblemasComponent implements OnInit{
         "  instance, the numbers ","\n" +
         "  A subsequence of an array is a set of numbers that aren't necessarily adjacent\n" +
         "  in the array but that are in the same order as they appear in the array. For\n" +
-        "  instance, the numbers "],["array = [1,2,3,5]","sequence = [1,-1,2.3"],["true"])
+        "  instance, the numbers "],[new Ejemplo("nums = [2,7,11,15], target = 9","[0,1]","Because nums[0] + nums[1] == 9, we return [0, 1]."),new Ejemplo("nums = [3,2,4], target = 6","[1,2]","")])
     ]
     return p;
   }

@@ -4,19 +4,16 @@
     <div class="Enunciado-Problema" *ngFor="let enunciado of problema.enunciado">{{enunciado}}<br></div>
     <br>
     <div class="texto-enunciado">
-      <b class="subtitulo">Sample Input:<br></b>
-      <div class="sample-box">
-        <div *ngFor="let input of problema.ejemploInput">{{input}}<br></div>
+      <div *ngFor="let e of problema.ejemplos;let i=index"><b>Ejemplo {{i + 1}}</b><br>
+      <div class="ejemplo-caja">
+        <p class="ejemplo-texto"><b class="subtitulo">Input: </b>  {{e.input}}</p>
+        <b class="subtitulo">Output:  </b>  {{e.output}}
       </div>
-    </div>
-    <br>
-    <div class="texto-enunciado">
-      <b class="subtitulo">Sample Input:<br></b>
-      <div class="sample-box">
-        <div *ngFor="let output of problema.ejemploOutput">{{output}}<br></div>
+      <br>
       </div>
-    </div>
     <br>
+    <br>
+    </div>
   </div>
   <div class="Panel-derecho">
     <div class="Monaco-ide box-borders">
@@ -30,11 +27,14 @@
 
 </div>
 <style>
-  .subtitulo{
-    font-size: 1em;
-    margin-bottom: 2%;
+  .ejemplo-texto{
+    font-size: 1vw;
+    margin-bottom: 0px;
   }
-  .sample-box{
+  .subtitulo{
+    font-size: 1vw;
+  }
+  .ejemplo-caja{
     background-color: #04445e;
     margin-top: 2%;
     padding:  2%;
