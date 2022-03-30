@@ -3,11 +3,13 @@ import {colors} from "@angular/cli/utilities/color";
 import {Problema} from "../modelos/problema";
 import {ActivatedRoute} from "@angular/router";
 import {Ejemplo} from "../modelos/ejemplo";
+import { PeticionesService} from "../servicios/peticiones.service";
 
 @Component({
   selector: 'app-problemas',
   templateUrl: './problemas.component.html',
   styleUrls: ['./problemas.component.css'],
+  providers: [PeticionesService]
 })
 export class ProblemasComponent implements OnInit{
   public id: string | null | undefined;
@@ -16,7 +18,7 @@ export class ProblemasComponent implements OnInit{
   code: string= 'public void x(){\n System.out.println("Hola mundo"););\n};';
   problema: Problema;
   problemas:Problema[]= this.getProblemas();
-  constructor( private route: ActivatedRoute) {
+  constructor( private route: ActivatedRoute, private peticiones: PeticionesService) {
     this.problema = new Problema(1,"Pedro",[
       "  Given two non-empty arrays of integers, write a function that determines" +
       "  whether the second array is a subsequence of the first one","A subsequence of an array is a set of numbers that aren't necessarily adjacent\n" +
@@ -49,7 +51,18 @@ export class ProblemasComponent implements OnInit{
     this.id= this.route.snapshot.paramMap.get('id');
     console.log(this.id)
     this.problema = this.getProblema(this.id);
-
+    this.peticiones.getUser1(this.id).subscribe(
+      result =>{
+        console.log(result)
+      },
+      error => {}
+    )
+    this.peticiones.getUser2(this.id).subscribe(
+      result =>{
+        console.log(result)
+      },
+      error => {}
+    )
   }
 
   private getProblemas() {

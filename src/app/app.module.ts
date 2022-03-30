@@ -8,6 +8,7 @@ import { MonacoEditorModule} from "ngx-monaco-editor";
 import { MainComponent } from './main/main.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ProblemasComponent } from './problemas/problemas.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProblemasComponent } from './problemas/problemas.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MonacoEditorModule.forRoot()
+    MonacoEditorModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
