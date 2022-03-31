@@ -8,13 +8,10 @@ export class PeticionesService{
   public url: string;
 
   constructor(public _http:HttpClient) {
-    this.url = "http://localhost:9000/problemas/"
+    this.url = "http://localhost:9000"
   }
 
-  getUser1(id){
-    return this._http.get("http://dummy.restapiexample.com/api/v1/employees");
-  }
-  getUser2(id){
-    return this._http.get(this.url+id);
+  get(url){
+    return this._http.get(this.url+url);
   }
 }

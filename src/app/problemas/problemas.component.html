@@ -1,15 +1,15 @@
 <div class="ProblemasMain">
   <div class="Datos-Problema">
-    <div class="Titulo-Problema">{{problema.id}}. {{problema.nombre}}</div>
+    <div class="Titulo-Problema">{{problema.id}}. {{problema.titulo}}</div>
     <div class="Enunciado-Problema" *ngFor="let enunciado of problema.enunciado">{{enunciado}}<br></div>
     <br>
     <div class="texto-enunciado">
-      <div *ngFor="let e of problema.ejemplos;let i=index"><b>Ejemplo {{i + 1}}</b><br>
-      <div class="ejemplo-caja">
-        <p class="ejemplo-texto"><b class="subtitulo">Input: </b>  {{e.input}}</p>
-        <b class="subtitulo">Output:  </b>  {{e.output}}
-      </div>
-      <br>
+      <div *ngFor="let ejemplo of problema.ejemplos;let i=index"><b>Ejemplo {{i + 1}}</b><br>
+        <div class="ejemplo-caja">
+          <p class="ejemplo-texto"><b class="subtitulo">Input: </b>  {{ejemplo.input}}</p>
+          <b class="subtitulo">Output:  </b>  {{ejemplo.output}}
+        </div>
+        <br>
       </div>
     <br>
     <br>
