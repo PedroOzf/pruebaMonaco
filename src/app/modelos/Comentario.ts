@@ -1,12 +1,12 @@
 export class Comentario{
   constructor(
-    idComentario: number,
-    texto: string,
-    likes:number,
-    dislikes:number,
-    idUsuario: number,
-    idProblema: number,
-    fecha: number
+    public idComentario: number,
+    public texto: string,
+    public likes:number,
+    public dislikes:number,
+    public idUsuario: number,
+    public idProblema: number,
+    public fecha: number
   ) {
   }
 }

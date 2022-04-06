@@ -34,7 +34,7 @@ export class Problema{
     this.id = id;
     this.titulo = titulo;
     this.enunciado = enunciado.split("\n");
-    this.ejemplos = ejemplos;
+    this.ejemplos = ejemplos.split("\n");
     this.likes = likes;
     this.dislikes = dislikes;
     this.aceptacion = aceptacion;
@@ -45,4 +45,12 @@ export class Problema{
   };
 
 
+  private setEjemplos(texto) {
+    var ej : Ejemplo[]= [];
+    var ejemplos : string[] = texto.split("\n");
+    for(let i =0;i<ejemplos.length;i++){
+      ej.push(new Ejemplo(ejemplos[i],ejemplos[i+1],""));
+    }
+    return ej;
+  }
 }

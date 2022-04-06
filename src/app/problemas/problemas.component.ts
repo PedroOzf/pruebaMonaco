@@ -21,12 +21,11 @@ export class ProblemasComponent implements OnInit{
   editor : any;
   editorOptions = {theme: 'vs-dark', language: 'java'};
   code: string= 'public void x(){\n System.out.println("Hola mundo"););\n};';
-  problema: Problema = new Problema(1,"Array","jkbjbkjkjka\ndsjkbadsjbkadsjkbdasbjkd\nabjskjaskbdjbkdasjbkasd",[new Ejemplo("asdasd","asdasda","dadasda"),new Ejemplo("asdasd","asdasda","dadasda")],10,10,2,3,2,[new Solucion(1,10,3,122,"aceptada","public String X(){\n}")],new Tablon(1,[]),[new Test(1,1,"[9,1]","[1,2,3,4]")]);
+  problema: Problema = new Problema(1,"Array","jkbjbkjkjka\ndsjkbadsjbkadsjkbdasbjkd\nabjskjaskbdjbkdasjbkasd","sadasdasd\nasdasdasda\nasdasdasdasd\sadasdasd",10,10,2,3,2,[new Solucion(1,10,3,122,"aceptada","public String X(){\n}")],new Tablon(1,[]),[new Test(1,1,"[9,1]","[1,2,3,4]")]);
   problemas:Problema[]= this.getProblemas();
   constructor( private route: ActivatedRoute, private peticiones: PeticionesService) {
-    this.problema = new Problema(1,"Array","jkbjbkjkjka\ndsjkbadsjbkadsjkbdasbjkd\nabjskjaskbdjbkdasjbkasd",[new Ejemplo("asdasd","asdasda","dadasda"),new Ejemplo("asdasd","asdasda","dadasda")],10,10,2,3,2,[new Solucion(1,10,3,122,"aceptada","public String X(){\n}")],[],[new Test(1,1,"[9,1]","[1,2,3,4]")]);
+    this.problema = new Problema(1,"Array","jkbjbkjkjka\ndsjkbadsjbkadsjkbdasbjkd\nabjskjaskbdjbkdasjbkasd","sadasdasd\nasdasdasda\nasdasdasdasd\sadasdasd",10,10,2,3,2,[new Solucion(1,10,3,122,"aceptada","public String X(){\n}")],[],[new Test(1,1,"[9,1]","[1,2,3,4]")]);
     console.log(this.problema.ejemplos);
-    console.log(new Ejemplo("qweqweq","asdasdasd","xcvxcvxcv"));
   }
 
   onInit(editor) {
@@ -120,11 +119,9 @@ export class ProblemasComponent implements OnInit{
         // @ts-ignore
         var comentarios: Comentario[]=[];
         for(let i=0;i<resp.length;i++){
-          console.log(resp[i])
-          console.log(resp[i]['idComentario'])
-          var coment = new Comentario(resp['idComentario'],resp['texto'],resp['likes'],resp['dislikes'],resp['idUsuario'],resp['idPooblema'],resp['fecha']);
-          console.log(coment);
-          comentarios.push(coment)
+          let c : Comentario;
+          c = new Comentario(resp['idComentario'],resp['texto'],resp['likes'],resp['dislikes'],resp['idUsuario'],resp['idPooblema'],resp['fecha']);
+          comentarios.push(c)
         }
         console.log(comentarios);
         return new Tablon(this.problema.id,comentarios);
